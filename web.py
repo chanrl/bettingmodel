@@ -36,6 +36,9 @@ class scrape():
     self.driver.find_element_by_xpath('//*[@id="submit-h2h"]').click()
     time.sleep(3)
     self.page = self.driver.page_source
+    table = pd.read_html(self.page)
+    table[1].to_csv(f'data/{team}.csv')
+    self.driver.back()
 
   def sportsplays(self, month, day, year):
     '''
@@ -58,7 +61,8 @@ class scrape():
     self.driver.find_element_by_name('commit').click()
     self.page = self.driver.page_source
     table = pd.read_html(self.page)
-    return table
+    table[0].to_csv(f'data/{month}-{day}-{year}.csv')
+    self.driver.back()
 
   def quit(self):
     self.driver.close()
