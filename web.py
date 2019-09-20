@@ -37,7 +37,7 @@ class scrape():
     time.sleep(3)
     self.page = self.driver.page_source
     table = pd.read_html(self.page)
-    table[1].to_csv(f'data/{team}.csv')
+    table[1].to_csv(f'data/{team}-os.csv')
     self.driver.back()
 
   def sportsplays(self, month, day, year):
@@ -61,7 +61,7 @@ class scrape():
     self.driver.find_element_by_name('commit').click()
     self.page = self.driver.page_source
     table = pd.read_html(self.page)
-    table[0].to_csv(f'data/{month}-{day}-{year}.csv')
+    table[0].to_csv(f'data/{month}-{day}-{year}-sp.csv')
     self.driver.back()
 
   def quit(self):
