@@ -86,5 +86,5 @@ merged = temp[['Date', 'Init', 'Home Spread', 'Home_win', 'Away-ATS', 'Home-ATS'
 #pub betting 70% on Away. 
 
 model_df = merged[['Home Spread', 'Home_win', 'Away-ATS']].reset_index(drop = True)
-
+model_df = model_df.rename(columns = {'Home_win': 'Cover'})
 model_df.to_csv('model_data.csv')
