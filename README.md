@@ -7,7 +7,7 @@
 - Profit
 
 # Quick Summary
-The main thing this little side project accomplished is the creation of a clean public betting % and spread database for past NFL games within the last 3 years.
+The main thing this little side project accomplished is the creation of a clean public betting % and spread database for past NFL games within the last 3 years. The main.py script can pull and merge betting information from oddsshark and sportsplays. It  should be able to be modified for baseball and basketball as well.
 
 Depending on the parameters you query, you can find some decent history trends for certain percentages and spreads.
 
